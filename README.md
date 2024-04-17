@@ -8,7 +8,7 @@ python main.py [path_to_file]
 ```
 # Example
 Solution for [ABC348-B](https://atcoder.jp/contests/abc348/tasks/abc348_b)  
-[example/abc348-b.mcn](example/abc348-b.mcn)
+[examples/abc348-b.mcn](examples/abc348-b.mcn)
 ```:example.mc
 N = nextIn~parseInt();
 XY = newList<N, newList<2, 0>> ~map(FUNC<i, i ~map(FUNC<j, nextIn ~parseInt()>)>);
