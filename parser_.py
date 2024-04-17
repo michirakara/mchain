@@ -19,6 +19,7 @@ CHAIN_FUNC_LIST = [
     "geq",
     "leq",
     "flip",
+    "iota",
 ]
 
 BEGIN_FUNC_LIST = ["nextIn", "newList", "FUNC"]
@@ -235,25 +236,25 @@ def reduce_(lhs, start_val, func):
     return val
 
 
-def eq(lhs, rhs):
+def eq_(lhs, rhs):
     return lhs == rhs
 
 
-def gt(lhs, rhs):
+def gt_(lhs, rhs):
     return lhs > rhs
 
 
-def lt(lhs, rhs):
+def lt_(lhs, rhs):
     return lhs < rhs
 
 
-def geq(lhs, rhs):
+def geq_(lhs, rhs):
     return lhs >= rhs
 
 
-def leq(lhs, rhs):
+def leq_(lhs, rhs):
     return lhs <= rhs
 
 
-def flip(lhs):
+def flip_(lhs):
     return not lhs
