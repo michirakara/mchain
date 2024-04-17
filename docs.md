@@ -1,6 +1,6 @@
 # EBNFもどき
 ```bnf
-<code> ::= {<line>;}
+<code> ::= {<line>;[//{? all visible characters ?}"\n"]}
 <line> ::= <rhs> = <expression>
 <rhs> ::= ("_"|"a"|...|"z"|"A"|...|"Z")* | _
 <expression> ::= <init>{"~"<chain>}
