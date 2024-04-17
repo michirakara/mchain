@@ -20,6 +20,7 @@ CHAIN_FUNC_LIST = [
     "leq",
     "flip",
     "iota",
+    "ifElse",
 ]
 
 BEGIN_FUNC_LIST = ["nextIn", "newList", "FUNC"]
@@ -62,8 +63,8 @@ class Func:
 
 
 def parse_start(expression):
-    expression = expression.strip()
     # print("parse-start\t", expression)
+    expression = expression.strip()
     is_func = False
     if expression[:5] == "FUNC<":
         is_func = True
@@ -114,6 +115,7 @@ def parse_start(expression):
 
 def parse_expression(expression):
     # print("parse-expression:\t", expression)
+    expression = expression.strip()
     funcs = []
     now = ["", [""]]
     start_idx = len(expression)
@@ -151,7 +153,7 @@ def parse_expression(expression):
                 idx += 1
             while now[1] and now[1][-1] == "":
                 now[1].pop()
-            if now[1]:
+            if now[1] and type(now[1][-1]) == str:
                 now[1][-1] = parse_expression(now[1][-1])
             funcs.append(now)
             now = ["", [""]]
@@ -174,7 +176,7 @@ def parse_expression(expression):
 
 
 def call_func(*args, func):
-    # print(arg, func)
+    # print(args, func)
     for i in range(len(args)):
         exec(f"global {func.names[i]};{func.names[i]}={args[i]}")
     return parse_expression(func.func)
@@ -258,3 +260,24 @@ def leq_(lhs, rhs):
 
 def flip_(lhs):
     return not lhs
+
+
+def iota_(lhs, begin, step):
+    now = begin
+    to_ret = lhs[:]
+    for i in range(len(lhs)):
+        to_ret[i] = now
+        now += step
+    return to_ret
+
+
+def ifElse_(lhs, condition, iftrue, iffalse):
+    if condition:
+        return call_func(lhs, func=iftrue)
+    return call_func(lhs, func=iffalse)
+
+
+def set_(lhs, idx, value):
+    ret = lhs[:]
+    ret[idx] = value
+    return ret

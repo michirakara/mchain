@@ -1,15 +1,3 @@
-# mchain
-構文解析ゴリラへの道
-# Docs
-[Documentation](docs.md)
-# Usage
-```sh
-python main.py [path_to_file]
-```
-# Example
-Solution for [ABC348-B](https://atcoder.jp/contests/abc348/tasks/abc348_b)  
-[example/abc348-b.mcn](example/abc348-b.mcn)
-```:example.mc
 N = nextIn~parseInt();
 XY = newList<N, newList<2, 0>> ~map(FUNC<i, i ~map(FUNC<j, nextIn ~parseInt()>)>);
 // _ = XY ~println();
@@ -32,4 +20,3 @@ _ = newList<N,0>
             ) ~at(0) ~add(1)
             ~println()
     >);
-```

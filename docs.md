@@ -47,6 +47,12 @@ rhsが等しいか判定する
 元の値がrhs以下か判定
 ## flip()
 真偽値を反転
+## iota(begin, step)
+配列のi番目をbegin+i*stepで埋める
+## ifElse(condition, iftrue, iffalse)
+conditionが真ならiftrue(元の値)、偽ならiffalse(元の値)を返す
+## set(idx, value)
+元の配列のidx番目をvalueに変えた配列を返す
 
 # \<init>のところのやつ一覧
 ## nextIn<>
