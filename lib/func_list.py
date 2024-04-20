@@ -20,6 +20,10 @@ CHAIN_FUNC_LIST: list[str] = [
     "iota",
     "ifElse",
     "set",
+    "subSeq",
+    "and",
+    "or",
+    "xor",
 ]
 
 

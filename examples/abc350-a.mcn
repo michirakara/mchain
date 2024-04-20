@@ -1,0 +1,5 @@
+num = nextIn ~subSeq(3, 6) ~parseInt();
+_ = num ~ifElse(num ~gt(0) ~and(num ~lt(350)) ~and(num ~eq(316) ~flip()),
+    FUNC<i, "Yes" ~println()>,
+    FUNC<i, "No" ~println()>,
+);
