@@ -53,6 +53,14 @@ rhsが等しいか判定する
 conditionが真ならiftrue(元の値)、偽ならiffalse(元の値)を返す
 ## set(idx, value)
 元の配列のidx番目をvalueに変えた配列を返す
+## subSeq(start,end)
+文字列または配列LのL[start,end)を返します
+## and(rhs)
+intまたはboolのandをする
+## or(rhs)
+intまたはboolのorをする
+## xor(rhs)
+intまたはboolのxorをする
 
 # \<init>のところのやつ一覧
 ## nextIn<>
@@ -62,4 +70,4 @@ valueで初期化された長さsizeのリストを返す
 ## FUNC<arg1, arg2, ... , func>
 ラムダ式。arg1, arg2, ... を引数としてfuncを実行する関数を返す
 ## それ以外
-雑にPythonでevalしているのでなんでもできます（ダメ）
+文字列、int、floatの定数が使えます

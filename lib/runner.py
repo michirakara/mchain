@@ -116,6 +116,14 @@ def run_method(val: Value, method: Method) -> Value:
             return ifElse_(val, *args)
         case "set":
             return set_(val, *args)
+        case "subSeq":
+            return subSeq_(val, *args)
+        case "and":
+            return and_(val, *args)
+        case "or":
+            return or_(val, *args)
+        case "xor":
+            return xor_(val, *args)
 
 
 def add_(lhs: Value, to_add: Value) -> Value:
@@ -217,3 +225,19 @@ def set_(lhs: Value, idx: Value, value: Value) -> Value:
     ret = deepcopy(lhs).val
     ret[idx.val] = value
     return Value(ret)
+
+
+def subSeq_(lhs: Value, start: Value, end: Value) -> Value:
+    return Value(deepcopy(lhs).val[start.val : end.val])
+
+
+def and_(lhs: Value, rhs: Value) -> Value:
+    return Value(lhs.val & rhs.val)
+
+
+def or_(lhs: Value, rhs: Value) -> Value:
+    return Value(lhs.val | rhs.val)
+
+
+def xor_(lhs: Value, rhs: Value) -> Value:
+    return Value(lhs.val ^ rhs.val)

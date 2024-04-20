@@ -166,6 +166,6 @@ def parse_expression(expression: str) -> Expression:
             chains.append(parse_method(expression[start_idx:idx].strip()))
             start_idx = idx + 1
         idx += 1
-    if expression[start_idx:].strip()!="":
+    if expression[start_idx:].strip() != "":
         chains.append(parse_method(expression[start_idx:].strip()))
     return Expression(head, chains)
