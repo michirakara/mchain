@@ -1,5 +1,5 @@
 # mchain
-構文解析ゴリラへの道
+mchain is a functional language that only uses method chaining and assign
 # Docs
 [Documentation](docs.md)
 # Usage
@@ -9,10 +9,9 @@ python main.py [path_to_file]
 # Example
 Solution for [ABC348-B](https://atcoder.jp/contests/abc348/tasks/abc348_b)  
 [examples/abc348-b.mcn](examples/abc348-b.mcn)
-```:example.mc
+```:example.mcn
 N = nextIn~parseInt();
 XY = newList<N, newList<2, 0>> ~map(FUNC<i, i ~map(FUNC<j, nextIn ~parseInt()>)>);
-// _ = XY ~println();
 _ = newList<N,0> 
     ~iota(0, 1)
     ~map(FUNC<
