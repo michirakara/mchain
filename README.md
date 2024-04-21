@@ -1,5 +1,5 @@
 # mchain
-mchain is a functional language that only uses method chaining and assign
+mchain is a functional language that only uses method chaining and assigning.
 # Docs
 [Documentation](docs.md)
 # Usage
@@ -32,3 +32,4 @@ _ = newList<N,0>
             ~println()
     >);
 ```
+View more on [examples](examples)
